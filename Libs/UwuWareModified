@@ -1611,8 +1611,8 @@ function library:Init()
 	self.base = self.base or self:Create("ScreenGui")
 	if syn and syn.protect_gui then
 		syn.protect_gui(self.base)
-	elseif hiddenUI then
-		hiddenUI(self.base)
+	elseif gethui then
+		gethui(self.base)
 	else
 		game:GetService"Players".LocalPlayer:Kick("Error: protect_gui function not found")
 		return
