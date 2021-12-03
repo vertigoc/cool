@@ -423,6 +423,7 @@ function Library:CreateUI(uiname,scrollenabled,elementspacing,framesize,TextAlli
         TextboxInfo.TextSize = 11.000
         TextboxInfo.TextTransparency = 0.500
         TextboxInfo.TextXAlignment = Enum.TextXAlignment.Left
+        TextboxInfo.BorderSizePixel = 0
         
         TextboxTitle.Name = "TextboxTitle"
         TextboxTitle.Parent = TextBoxHolder
@@ -435,6 +436,7 @@ function Library:CreateUI(uiname,scrollenabled,elementspacing,framesize,TextAlli
         TextboxTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
         TextboxTitle.TextSize = 12.000
         TextboxTitle.TextXAlignment = Enum.TextXAlignment.Left
+        TextboxTitle.BorderSizePixel = 0
         
         TextBox.Parent = TextBoxHolder
         TextBox.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
@@ -446,6 +448,7 @@ function Library:CreateUI(uiname,scrollenabled,elementspacing,framesize,TextAlli
         TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
         TextBox.TextSize = 10.000
         TextBox.TextTransparency = 0.300
+        TextBox.BorderSizePixel = 0
 
         TextBox.Focused:Connect(function()
             TextBox.BorderColor3 = Color3.fromRGB(114, 137, 218)
