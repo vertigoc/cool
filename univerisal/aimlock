@@ -8,7 +8,7 @@ settings = {
 };
 
 
-local library = loadstring(game:HttpGet('https://sypse.xyz/dependencies/uwuware.lua'))();
+local library = loadstring(game:HttpGet('https://raw.githubusercontent.com/vertigoc/cool/main/Libs/UwuWareModified?token=AVVXYT3IEKQA3M4EOEKKEKLBVISJE'))();
 local Main = library:CreateWindow("Lock-On: Sypse#6005");
 local camera, plr = Workspace.CurrentCamera, game:GetService("Players").LocalPlayer;
 local mouse, rs = plr:GetMouse(), game:GetService("RunService").RenderStepped;
