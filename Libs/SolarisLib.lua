@@ -1296,10 +1296,10 @@ return SolarisLib
 --[[
 local SolarisLib = loadstring(game:HttpGet("https://solarishub.dev/SolarisLib.lua"))()
 
---[[SolarisLib:New({
+SolarisLib:New({
    Name - Title of the UI <string>
    FolderToSave - Name of the folder where the UI files will be stored <string>
-})]]
+})
 local win = SolarisLib:New({
    Name = "SolarisLib",
    FolderToSave = "SolarisLibStuff"
@@ -1323,7 +1323,6 @@ end)
 
 --[[
 toggle:Set(state <boolean>)
-]]
 
 --sec:Slider(title <string>,default <number>,max <number>,minimum <number>,increment <number>, flag <string>, callback <function>)
 local slider = sec:Slider("Slider", 0,25,0,2.5,"Slider", function(t)
@@ -1342,7 +1341,6 @@ end)
 --[[
 Dropdown:Refresh(options <table>, deletecurrent <boolean>)
 Dropdown:Set(option <string>)
-]]
 
 --sec:MultiDropdown(title <string>,options <table>,default <table>, flag <string>, callback <function>)
 local multidropdown =sec:MultiDropdown("Multi Dropdown", {"a","b","c","d","e"},{"b", "c"},"Dropdown", function(t)
@@ -1352,7 +1350,6 @@ end)
 --[[
 Dropdown:Refresh(options <table>, deletecurrent <boolean>)
 Dropdown:Set(option <table>)
-]]
 
 --sec:Colorpicker(title <string>, default <color3>, flag <string>, callback <function>)
 sec:Colorpicker("Colorpicker", Color3.fromRGB(255,255,255),"Colorpicker", function(t)
@@ -1375,13 +1372,11 @@ end)
 
 --[[
 bind:Set(state <keycode>)
-]]
 
 --sec:Label(text <string>)
 local label = sec:Label("Label")
 
 --[[
 label:Set(text <string>)
-]]
 local tab2 = win:Tab("Tab 2")
 ]]--
