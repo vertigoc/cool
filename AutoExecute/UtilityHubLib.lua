@@ -68,7 +68,7 @@ function InternalLib:CreateWindow()
     Instances.TextLabel_1.TextWrapped = true
     Instances.TextLabel_1.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.141176)
     Instances.TextLabel_1.BorderSizePixel = 0
-    Instances.TextLabel_1.Position = UDim2.new(0, 0, 3, 0)
+    Instances.TextLabel_1.Position = UDim2.new(0, 0, 10, 0)
     Instances.TextLabel_1.Size = UDim2.new(0, 287, 0, 28)    
 
     Instances.UIListLayout_1.Padding = UDim.new(0, 2)
