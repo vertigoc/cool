@@ -73,6 +73,7 @@ function InternalLib:CreateWindow()
 
     local function UpdateSize()
         local cS = Instances.UIListLayout_1.AbsoluteContentSize
+	Instances.ScrollingFrame_1.ScrollBarThickness = 0
 
         game.TweenService:Create(Instances.ScrollingFrame_1, TweenInfo.new(0.15, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
             CanvasSize = UDim2.new(0,cS.X,0,cS.Y)
