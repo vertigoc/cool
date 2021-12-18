@@ -92,26 +92,6 @@ function InternalLib:CreateWindow()
 local searchBar = Instances.TextBox_1
 local items = Instances.ScrollingFrame_1
 
-function UpdateResults()
-	local search = string.lower(searchBar.Text)
-	for i, v in	 pairs(items:GetChildren()) do
-		if v:IsA("Frame") then
-			if search ~= "" then
-				local item = string.lower(v.Text)
-				if string.find(item, search) then
-					v.Visible = true
-				else
-					v.Visible = false
-				end
-			else
-				v.Visible = true
-			end
-		end
-	end
-end
-
-searchBar.Changed:Connect(UpdateResults)
-
 game.ContextActionService:BindAction("keyPress", onKeyPress, false, Enum.KeyCode.F1)
 
     local InsideInternalLib = {}
