@@ -1,0 +1,4 @@
+local Main = loadstring(game:HttpGet("https://raw.githubusercontent.com/vertigoc/cool/main/AutoExecute/UtilityHubLib"))()
+local Options = Main:CreateWindow()
+Options:CreateButton("Test", "VeryCool")
+Options:CreateButton("NoBigNoob", "NotCool")
