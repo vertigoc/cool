@@ -1,9 +1,6 @@
 local InternalLib = {}
 
 function InternalLib:CreateWindow()
-    if game:GetService("CoreGui"):FindFirstChild("InternalUi") then
-        game:GetService("CoreGui"):FindFirstChild("InternalUi"):Destroy()
-    end
     local screenGui = Instance.new("ScreenGui",game:GetService("CoreGui"))
 
     local Instances = {
@@ -68,7 +65,7 @@ function InternalLib:CreateWindow()
     Instances.TextLabel_1.TextWrapped = true
     Instances.TextLabel_1.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.141176)
     Instances.TextLabel_1.BorderSizePixel = 0
-    Instances.TextLabel_1.Position = UDim2.new(0, 0, 10, 0)
+    Instances.TextLabel_1.Position = UDim2.new(0, 0, 1, 0)
     Instances.TextLabel_1.Size = UDim2.new(0, 287, 0, 28)    
 
     Instances.UIListLayout_1.Padding = UDim.new(0, 2)
@@ -186,4 +183,5 @@ game.ContextActionService:BindAction("keyPress", onKeyPress, false, Enum.KeyCode
         end
     return InsideInternalLib
 end
+
 return InternalLib
