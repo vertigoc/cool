@@ -53,6 +53,7 @@ function InternalLib:CreateWindow()
     Instances.ScrollingFrame_1.BorderSizePixel = 0
     Instances.ScrollingFrame_1.Position = UDim2.new(0.020905923098326, 0, 0.12171052396297, 0)
     Instances.ScrollingFrame_1.Size = UDim2.new(0, 271, 0, 267)
+    Instances.ScrollingFrame_1.ScrollBarThickness = 0
     
     Instances.UIListLayout_1.Parent = Instances.ScrollingFrame_1
     Instances.UIListLayout_1.SortOrder = Enum.SortOrder.LayoutOrder
