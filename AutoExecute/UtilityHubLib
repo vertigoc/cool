@@ -135,7 +135,7 @@ game.ContextActionService:BindAction("keyPress", onKeyPress, false, Enum.KeyCode
         Instances.Frame_3.BorderColor3 = Color3.new(0.117647, 0.117647, 0.141176)
         Instances.Frame_3.BorderSizePixel = 0
         Instances.Frame_3.Size = UDim2.new(0, 271, 0, 58)
-        Instances.Frame_3.Name = 'Option1'
+        Instances.Frame_3.Name = Title
 
         UpdateSize()
         
