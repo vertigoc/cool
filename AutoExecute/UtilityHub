@@ -1,6 +1,13 @@
 local Main = loadstring(game:HttpGet("https://raw.githubusercontent.com/vertigoc/cool/main/AutoExecute/UtilityHubLib.lua"))()
 local Options = Main:CreateWindow()
 --loadstring(game:HttpGet(""))()
+Options:CreateButton("Remote Spy", "Bloxburg Remote Spy", "Remote Spy Optimised For Bloxburg", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/vertigoc/cool/main/Utilty/BloxburgRemoteSpy.lua"))()
+end)
+
+--[[local Main = loadstring(game:HttpGet("https://raw.githubusercontent.com/vertigoc/cool/main/AutoExecute/UtilityHubLib.lua"))()
+local Options = Main:CreateWindow()
+--loadstring(game:HttpGet(""))()
 Options:CreateButton("Bloxburg Remote Spy", "Made By: Introvert1337", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/vertigoc/cool/main/Utilty/BloxburgRemoteSpy.lua"))()
 end)
@@ -25,3 +32,4 @@ end)
 Options:CreateButton("Infinte Yield", "Admin Script", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
 end)
+]]
