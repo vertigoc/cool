@@ -148,18 +148,22 @@ function UiLib:CreateWindow(Title, Notice)
         }):Play()
     end
 
-    local toggle = true 
+    local toggle = true
+
     function onKeyPress(actionName, userInputState, inputObject)
         if userInputState == Enum.UserInputState.Begin then
+            print("R was pressed")
             if toggle == false then
-                toggle = true
-                screenGui.Enabled = true
+                 toggle = true
+                  screenGui.Enabled = true
             else
                 toggle = false
                 screenGui.Enabled = false
             end
         end
     end
+    
+    game.ContextActionService:BindAction("keyPress", onKeyPress, false, Enum.KeyCode.F1)
 
     local searchBar = Instances.TextBox_1
     local items = Instances.ScrollingFrame_1
