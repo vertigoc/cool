@@ -72,7 +72,7 @@ function UiLib:CreateWindow(Title, Notice)
     Instances.TextLabel_2.Name = 'Title'
 
     local content, isReady = game:GetService("Players"):GetUserThumbnailAsync(game:GetService("Players").LocalPlayer.UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size60x60)
-    Instances.ImageLabel_1.Image = content
+    Instances.ImageLabel_1.Image = content or "rbxasset://textures/ui/GuiImagePlaceholder.png"
     Instances.ImageLabel_1.Parent = Instances.Frame_3
     Instances.ImageLabel_1.Image = content
     Instances.ImageLabel_1.BackgroundColor3 = Color3.new(1, 1, 1)
