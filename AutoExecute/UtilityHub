@@ -20,7 +20,7 @@ Options:CreateButton("Remote Spy Simple", "Simple Spy", "A Remote Spy" , "exx#93
     loadstring(game:HttpGet("https://github.com/exxtremestuffs/SimpleSpySource/raw/master/SimpleSpy.lua"))()
 end)
 Options:CreateButton("Dark Dex Explorer", "Dark Dex V3", "Explorer For Roblox" , "moon",function()
-    loadstring(game:HttpGet("https://github.com/exxtremestuffs/SimpleSpySource/raw/master/SimpleSpy.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/vertigoc/cool/main/Utilty/DarkDex.lua"))()
 end)
 Options:CreateButton("Admin Infinte Yield", "Infinte Yield", "Admin Script", "Edge", function()
     loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
