@@ -67,15 +67,12 @@ function UiLib:CreateWindow(Title, Notice)
     Instances.TextLabel_2.Text = Title
     Instances.TextLabel_2.TextColor3 = Color3.new(1, 1, 1)
     Instances.TextLabel_2.TextSize = 20
-    Instances.TextLabel_2.RichText = true
     Instances.TextLabel_2.TextXAlignment = Enum.TextXAlignment.Left
     Instances.TextLabel_2.BackgroundColor3 = Color3.new(1, 1, 1)
     Instances.TextLabel_2.BackgroundTransparency = 1
     Instances.TextLabel_2.Position = UDim2.new(0.017676770687103, 0, -0.62344408035278, 0)
     Instances.TextLabel_2.Size = UDim2.new(0, 180, 0, 25)
     Instances.TextLabel_2.Name = 'Title'
-    Instances.TextLabel_2.TextWrapped = true
-    Instances.TextLabel_3.TextScaled.TextScaled = true
 
     local content, isReady = game:GetService("Players"):GetUserThumbnailAsync(game:GetService("Players").LocalPlayer.UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size60x60)
     Instances.ImageLabel_1.Image = content or "rbxasset://textures/ui/GuiImagePlaceholder.png"
