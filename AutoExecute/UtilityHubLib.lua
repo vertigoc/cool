@@ -218,8 +218,8 @@ function UiLib:CreateWindow(Title, Notice)
 
         Instances2.UIGradient_1.Parent = Instances2.Frame_1
         Instances2.UIGradient_1.Color = ColorSequence.new{
-            ColorSequenceKeypoint.new(0, Color3.new(0.196078, 0.2, 0.239216)),
-            ColorSequenceKeypoint.new(1, Color3.new(0.235294, 0.317647, 0.462745))
+	        ColorSequenceKeypoint.new(0, Color3.new(0, 0.333333, 0.498039)),
+	        ColorSequenceKeypoint.new(1, Color3.new(0.14902, 0, 0.454902))
         }
 
         Instances2.TextLabel_1.Parent = Instances2.Frame_1
