@@ -1,79 +1,142 @@
-local InternalLib = {}
+local UiLib = {}
 
-function InternalLib:CreateWindow()
+function UiLib:CreateWindow(Title, Notice)
+    local Title = Title or "Title"
+    local Notice = Notice or "Notice: Nothing Has Been Set"
+    local Plr = game:GetService("Players").LocalPlayer.DisplayName
     local screenGui = Instance.new("ScreenGui",game:GetService("CoreGui"))
 
     local Instances = {
+        ["Frame_3"] = Instance.new("Frame"),
+        ["UIGridLayout_1"] = Instance.new("UIGridLayout"),
         ["ScrollingFrame_1"] = Instance.new("ScrollingFrame"),
-        ["Frame_1"] = Instance.new("Frame"),
-        ["TextLabel_1"] = Instance.new("TextLabel"),
-        ["UIListLayout_1"] = Instance.new("UIListLayout"),
-        ["TextBox_1"] = Instance.new("TextBox"),
         ["Frame_2"] = Instance.new("Frame"),
+        ["Frame_1"] = Instance.new("Frame"),
+        ["TextLabel_2"] = Instance.new("TextLabel"),
+        ["TextBox_1"] = Instance.new("TextBox"),
+        ["UICorner_2"] = Instance.new("UICorner"),
+        ["Frame_4"] = Instance.new("Frame"),
+        ["ImageLabel_1"] = Instance.new("ImageLabel"),
+        ["UICorner_1"] = Instance.new("UICorner"),
+        ["TextLabel_3"] = Instance.new("TextLabel"),
+        ["TextLabel_1"] = Instance.new("TextLabel"),
     }
-    
-    screenGui.Name = 'InternalUi'
-    screenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-    
+
+
+    screenGui.Name = 'UtiltyUI'
+
     Instances.Frame_1.Parent = screenGui
-    Instances.Frame_1.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.141176)
+    Instances.Frame_1.BackgroundColor3 = Color3.new(0.176471, 0.172549, 0.192157)
     Instances.Frame_1.BorderSizePixel = 0
-    Instances.Frame_1.Position = UDim2.new(0.041360292583704, 0, 0.064516127109528, 0)
-    Instances.Frame_1.Size = UDim2.new(0, 287, 0, 304)
+    Instances.Frame_1.Position = UDim2.new(0.31801471114159, 0, 0.27134722471237, 0)
+    Instances.Frame_1.Size = UDim2.new(0, 396, 0, 241)
     Instances.Frame_1.Name = 'Main'
-    
+
     Instances.Frame_2.Parent = Instances.Frame_1
-    Instances.Frame_2.BackgroundColor3 = Color3.new(1, 1, 1)
+    Instances.Frame_2.BackgroundColor3 = Color3.new(0.176471, 0.172549, 0.192157)
     Instances.Frame_2.BorderSizePixel = 0
-    Instances.Frame_2.Position = UDim2.new(0, 0, 0.098684184253216, 0)
-    Instances.Frame_2.Size = UDim2.new(0, 287, 0, 1)
-    Instances.Frame_2.Name = 'Border'
-    
+    Instances.Frame_2.Position = UDim2.new(0, 0, -0.13874690234661, 0)
+    Instances.Frame_2.Size = UDim2.new(0, 396, 0, 30)
+    Instances.Frame_2.Name = 'TopBar'
+
+    Instances.Frame_3.Parent = Instances.Frame_1
+    Instances.Frame_3.BackgroundColor3 = Color3.new(1, 1, 1)
+    Instances.Frame_3.BackgroundTransparency = 1
+    Instances.Frame_3.Position = UDim2.new(0, 0, 0.024896265938878, 0)
+    Instances.Frame_3.Size = UDim2.new(0, 396, 0, 60)
+    Instances.Frame_3.Name = 'UserSection'
+
+    Instances.TextLabel_1.Parent = Instances.Frame_3
+    Instances.TextLabel_1.Font = Enum.Font.SourceSans
+    Instances.TextLabel_1.Text = Plr
+    Instances.TextLabel_1.TextColor3 = Color3.new(1, 1, 1)
+    Instances.TextLabel_1.TextSize = 16
+    Instances.TextLabel_1.TextXAlignment = Enum.TextXAlignment.Left
+    Instances.TextLabel_1.BackgroundColor3 = Color3.new(1, 1, 1)
+    Instances.TextLabel_1.BackgroundTransparency = 1
+    Instances.TextLabel_1.BorderSizePixel = 0
+    Instances.TextLabel_1.Position = UDim2.new(0.15909090638161, 0, 0.024412214756012, 0)
+    Instances.TextLabel_1.Size = UDim2.new(0, 180, 0, 21)
+    Instances.TextLabel_1.Name = 'User'
+
+    Instances.TextLabel_2.Parent = Instances.Frame_3
+    Instances.TextLabel_2.Font = Enum.Font.SourceSans
+    Instances.TextLabel_2.Text = Title
+    Instances.TextLabel_2.TextColor3 = Color3.new(1, 1, 1)
+    Instances.TextLabel_2.TextSize = 20
+    Instances.TextLabel_2.TextXAlignment = Enum.TextXAlignment.Left
+    Instances.TextLabel_2.BackgroundColor3 = Color3.new(1, 1, 1)
+    Instances.TextLabel_2.BackgroundTransparency = 1
+    Instances.TextLabel_2.Position = UDim2.new(0.017676770687103, 0, -0.62344408035278, 0)
+    Instances.TextLabel_2.Size = UDim2.new(0, 180, 0, 25)
+    Instances.TextLabel_2.Name = 'Title'
+
+    local Pfp;
+    Instances.ImageLabel_1.Parent = Instances.Frame_3
+    Instances.ImageLabel_1.Image = Pfp
+    Instances.ImageLabel_1.BackgroundColor3 = Color3.new(1, 1, 1)
+    Instances.ImageLabel_1.Position = UDim2.new(0.017676766961813, 0, 0.026556074619293, 0)
+    Instances.ImageLabel_1.Size = UDim2.new(0, 48, 0, 48)
+    Instances.ImageLabel_1.Name = 'Image'
+    local content, isReady = game:GetService("Players"):GetUserThumbnailAsync(game:GetService("Players").LocalPlayer.UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size60x60)
+    Instances.ImageLabel_1.Image = content
+
+    Instances.UICorner_1.Parent = Instances.ImageLabel_1
+    Instances.UICorner_1.CornerRadius = UDim.new(0, 999)
+
+    Instances.TextLabel_3.Parent = Instances.Frame_3
+    Instances.TextLabel_3.Font = Enum.Font.SourceSans
+    Instances.TextLabel_3.Text = "Notice: "..Notice
+    Instances.TextLabel_3.TextColor3 = Color3.new(1, 1, 1)
+    Instances.TextLabel_3.TextSize = 16
+    Instances.TextLabel_3.TextXAlignment = Enum.TextXAlignment.Left
+    Instances.TextLabel_3.BackgroundColor3 = Color3.new(1, 1, 1)
+    Instances.TextLabel_3.BackgroundTransparency = 1
+    Instances.TextLabel_3.BorderSizePixel = 0
+    Instances.TextLabel_3.Position = UDim2.new(0.15909090638161, 0, 0.47441220283508, 0)
+    Instances.TextLabel_3.Size = UDim2.new(0, 180, 0, 21)
+    Instances.TextLabel_3.Name = 'Notice'
+
+    Instances.Frame_4.Parent = Instances.Frame_3
+    Instances.Frame_4.BackgroundColor3 = Color3.new(1, 1, 1)
+    Instances.Frame_4.BorderSizePixel = 0
+    Instances.Frame_4.Position = UDim2.new(0, 0, 0.9822900891304, 0)
+    Instances.Frame_4.Size = UDim2.new(0, 396, 0, 1)
+
     Instances.TextBox_1.Parent = Instances.Frame_1
     Instances.TextBox_1.CursorPosition = -1
     Instances.TextBox_1.Font = Enum.Font.SourceSans
-    Instances.TextBox_1.PlaceholderColor3 = Color3.new(1, 1, 1)
+    Instances.TextBox_1.PlaceholderColor3 = Color3.new(0.772549, 0.772549, 0.772549)
     Instances.TextBox_1.PlaceholderText = 'Search..'
     Instances.TextBox_1.Text = ''
     Instances.TextBox_1.TextColor3 = Color3.new(1, 1, 1)
     Instances.TextBox_1.TextSize = 17
-    Instances.TextBox_1.TextXAlignment = Enum.TextXAlignment.Left
-    Instances.TextBox_1.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.141176)
+    Instances.TextBox_1.BackgroundColor3 = Color3.new(0.235294, 0.231373, 0.258824)
     Instances.TextBox_1.BorderSizePixel = 0
-    Instances.TextBox_1.ClipsDescendants = true
-    Instances.TextBox_1.Position = UDim2.new(0.022564452141523, 0, 0.0090000005438924, 0)
-    Instances.TextBox_1.Size = UDim2.new(0, 271, 0, 24)
-    Instances.TextBox_1.Name = 'SearchBox'
-    
-    Instances.ScrollingFrame_1.Parent = Instances.Frame_1
-    Instances.ScrollingFrame_1.CanvasSize = UDim2.new(0, 0, 0, 0)
-    Instances.ScrollingFrame_1.ScrollBarImageColor3 = Color3.new(0, 0, 0)
-    Instances.ScrollingFrame_1.Active = true
-    Instances.ScrollingFrame_1.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.141176)
-    Instances.ScrollingFrame_1.BorderSizePixel = 0
-    Instances.ScrollingFrame_1.Position = UDim2.new(0.020905923098326, 0, 0.12171052396297, 0)
-    Instances.ScrollingFrame_1.Size = UDim2.new(0, 271, 0, 267)
-    Instances.ScrollingFrame_1.ScrollBarThickness = 0
-    
-    Instances.UIListLayout_1.Parent = Instances.ScrollingFrame_1
-    Instances.UIListLayout_1.SortOrder = Enum.SortOrder.LayoutOrder
-    
-    Instances.TextLabel_1.Parent = Instances.Frame_1
-    Instances.TextLabel_1.Font = Enum.Font.SourceSans
-    Instances.TextLabel_1.Text = 'Press F1 To Toggle Ui'
-    Instances.TextLabel_1.TextColor3 = Color3.new(1, 1, 1)
-    Instances.TextLabel_1.TextSize = 19
-    Instances.TextLabel_1.TextWrapped = true
-    Instances.TextLabel_1.BackgroundColor3 = Color3.new(0.117647, 0.117647, 0.141176)
-    Instances.TextLabel_1.BorderSizePixel = 0
-    Instances.TextLabel_1.Position = UDim2.new(0, 0, 1, 0)
-    Instances.TextLabel_1.Size = UDim2.new(0, 287, 0, 28)    
+    Instances.TextBox_1.Position = UDim2.new(0.61363637447357, 0, 0.074688799679279, 0)
+    Instances.TextBox_1.Size = UDim2.new(0, 144, 0, 27)
+    Instances.TextBox_1.Name = 'Search'
 
-    Instances.UIListLayout_1.Padding = UDim.new(0, 2)
+    Instances.UICorner_2.Parent = Instances.TextBox_1
+    Instances.UICorner_2.CornerRadius = UDim.new(0, 4)
+
+    Instances.ScrollingFrame_1.Parent = Instances.Frame_1
+    Instances.ScrollingFrame_1.ScrollBarImageColor3 = Color3.new(0, 0, 0)
+    Instances.ScrollingFrame_1.ScrollBarThickness = 0
+    Instances.ScrollingFrame_1.Active = true
+    Instances.ScrollingFrame_1.BackgroundColor3 = Color3.new(1, 1, 1)
+    Instances.ScrollingFrame_1.BackgroundTransparency = 1
+    Instances.ScrollingFrame_1.BorderSizePixel = 0
+    Instances.ScrollingFrame_1.Position = UDim2.new(0.020202020183206, 0, 0.30705395340919, 0)
+    Instances.ScrollingFrame_1.Size = UDim2.new(0, 380, 0, 159)
+
+    Instances.UIGridLayout_1.Parent = Instances.ScrollingFrame_1
+    Instances.UIGridLayout_1.CellSize = UDim2.new(0, 187, 0, 100)
+    Instances.UIGridLayout_1.SortOrder = Enum.SortOrder.LayoutOrder
 
     local function UpdateSize()
-        local cS = Instances.UIListLayout_1.AbsoluteContentSize
-	Instances.ScrollingFrame_1.ScrollBarThickness = 0
+        local cS = Instances.UIGridLayout_1.AbsoluteContentSize
+        Instances.ScrollingFrame_1.ScrollBarThickness = 0
 
         game.TweenService:Create(Instances.ScrollingFrame_1, TweenInfo.new(0.15, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
             CanvasSize = UDim2.new(0,cS.X,0,cS.Y)
@@ -93,60 +156,65 @@ function InternalLib:CreateWindow()
         end
     end
 
-local searchBar = Instances.TextBox_1
-local items = Instances.ScrollingFrame_1
+    local searchBar = Instances.TextBox_1
+    local items = Instances.ScrollingFrame_1
 
-function UpdateResults()
-	local search = string.lower(searchBar.Text)
-	for i, v in	 pairs(items:GetChildren()) do
-		if v:IsA("Frame") then
-			if search ~= "" then
-				local item = string.lower(v.Name)
-				if string.find(item, search) then
-					v.Visible = true
-				else
-					v.Visible = false
-				end
-			else
-				v.Visible = true
-			end
-		end
-	end
-end
+    function UpdateResults()
+        local search = string.lower(searchBar.Text)
+        for i, v in	 pairs(items:GetChildren()) do
+            if v:IsA("Frame") then
+                if search ~= "" then
+                    local item = string.lower(v.Name)
+                    if string.find(item, search) then
+                        v.Visible = true
+                    else
+                        v.Visible = false
+                    end
+                else
+                    v.Visible = true
+                end
+            end
+        end
+    end
+    
+    searchBar.Changed:Connect(UpdateResults)
 
-searchBar.Changed:Connect(UpdateResults)
+    local insideLib = {}
 
-game.ContextActionService:BindAction("keyPress", onKeyPress, false, Enum.KeyCode.F1)
-
-    local InsideInternalLib = {}
-
-    function InsideInternalLib:CreateButton(Title, Description, Callback)
+    function insideLib:CreateButton(SearchName, Title, Description, Credits, Callback)
+        local SearchName = SearchName or "Utility"
         local Title = Title or "Title"
         local Description = Description or "Description"
+        local Credits = Credits or "Credits: nil"
         local Callback = Callback or function() end
 
         local Instances2 = {
-            ["Frame_2"] = Instance.new("Frame"),
-            ["UICorner_1"] = Instance.new("UICorner"),
-            ["Frame_3"] = Instance.new("Frame"),
-            ["ImageButton_1"] = Instance.new("ImageButton"),
-            ["TextLabel_2"] = Instance.new("TextLabel"),
             ["TextLabel_1"] = Instance.new("TextLabel"),
+            ["TextLabel_2"] = Instance.new("TextLabel"),
+            ["TextLabel_3"] = Instance.new("TextLabel"),
+            ["ImageButton_1"] = Instance.new("ImageButton"),
+            ["UIGradient_1"] = Instance.new("UIGradient"),
+            ["UICorner_1"] = Instance.new("UICorner"),
+            ["Frame_1"] = Instance.new("Frame"),
         }
-        
-        Instances2.Frame_3.Parent = Instances.ScrollingFrame_1
-        Instances2.Frame_3.BackgroundColor3 = Color3.new(0.164706, 0.164706, 0.203922)
-        Instances2.Frame_3.BorderColor3 = Color3.new(0.117647, 0.117647, 0.141176)
-        Instances2.Frame_3.BorderSizePixel = 0
-        Instances2.Frame_3.Size = UDim2.new(0, 271, 0, 58)
-        Instances2.Frame_3.Name = Title
 
-        UpdateSize()
-        
-        Instances2.UICorner_1.Parent = Instances.Frame_3
+
+
+        Instances2.Frame_1.Parent = Instances.ScrollingFrame_1
+        Instances2.Frame_1.BackgroundColor3 = Color3.new(1, 1, 1)
+        Instances2.Frame_1.Size = UDim2.new(0, 179, 0, 100)
+        Instances2.Frame_1.Name = SearchName
+
+        Instances2.UICorner_1.Parent = Instances2.Frame_1
         Instances2.UICorner_1.CornerRadius = UDim.new(0, 4)
-        
-        Instances2.TextLabel_1.Parent = Instances2.Frame_3
+
+        Instances2.UIGradient_1.Parent = Instances2.Frame_1
+        Instances2.UIGradient_1.Color = ColorSequence.new{
+            ColorSequenceKeypoint.new(0, Color3.new(0.196078, 0.2, 0.239216)),
+            ColorSequenceKeypoint.new(1, Color3.new(0.235294, 0.317647, 0.462745))
+        }
+
+        Instances2.TextLabel_1.Parent = Instances2.Frame_1
         Instances2.TextLabel_1.Font = Enum.Font.SourceSans
         Instances2.TextLabel_1.Text = Title
         Instances2.TextLabel_1.TextColor3 = Color3.new(1, 1, 1)
@@ -154,36 +222,50 @@ game.ContextActionService:BindAction("keyPress", onKeyPress, false, Enum.KeyCode
         Instances2.TextLabel_1.TextXAlignment = Enum.TextXAlignment.Left
         Instances2.TextLabel_1.BackgroundColor3 = Color3.new(1, 1, 1)
         Instances2.TextLabel_1.BackgroundTransparency = 1
-        Instances2.TextLabel_1.Position = UDim2.new(0.036900367587805, 0, 0.051724139600992, 0)
-        Instances2.TextLabel_1.Size = UDim2.new(0, 220, 0, 24)
-        
-        Instances2.TextLabel_2.Parent = Instances2.Frame_3
+        Instances2.TextLabel_1.Position = UDim2.new(0.037433154881001, 0, 0.059999998658895, 0)
+        Instances2.TextLabel_1.Size = UDim2.new(0, 172, 0, 22)
+        Instances2.TextLabel_1.Name = 'Title'
+
+        Instances2.TextLabel_2.Parent = Instances2.Frame_1
         Instances2.TextLabel_2.Font = Enum.Font.SourceSans
         Instances2.TextLabel_2.Text = Description
         Instances2.TextLabel_2.TextColor3 = Color3.new(1, 1, 1)
         Instances2.TextLabel_2.TextSize = 16
         Instances2.TextLabel_2.TextXAlignment = Enum.TextXAlignment.Left
+        Instances2.TextLabel_2.TextYAlignment = Enum.TextYAlignment.Top
         Instances2.TextLabel_2.BackgroundColor3 = Color3.new(1, 1, 1)
         Instances2.TextLabel_2.BackgroundTransparency = 1
-        Instances2.TextLabel_2.Position = UDim2.new(0.036900367587805, 0, 0.46551725268364, 0)
-        Instances2.TextLabel_2.Size = UDim2.new(0, 220, 0, 24)
-        
-        Instances2.ImageButton_1.Parent = Instances2.Frame_3
+        Instances2.TextLabel_2.Position = UDim2.new(0.037433154881001, 0, 0.34999999403954, 0)
+        Instances2.TextLabel_2.Size = UDim2.new(0, 172, 0, 33)
+        Instances2.TextLabel_2.Name = 'Desc'
+
+        Instances2.TextLabel_3.Parent = Instances2.Frame_1
+        Instances2.TextLabel_3.Font = Enum.Font.SourceSans
+        Instances2.TextLabel_3.Text = Credits
+        Instances2.TextLabel_3.TextColor3 = Color3.new(1, 1, 1)
+        Instances2.TextLabel_3.TextSize = 15
+        Instances2.TextLabel_3.TextXAlignment = Enum.TextXAlignment.Left
+        Instances2.TextLabel_3.BackgroundColor3 = Color3.new(1, 1, 1)
+        Instances2.TextLabel_3.BackgroundTransparency = 1
+        Instances2.TextLabel_3.Position = UDim2.new(0.037433154881001, 0, 0.68000000715256, 0)
+        Instances2.TextLabel_3.Size = UDim2.new(0, 101, 0, 25)
+        Instances2.TextLabel_3.Name = 'Credits'
+
+        Instances2.ImageButton_1.Parent = Instances2.Frame_1
         Instances2.ImageButton_1.Image = 'rbxassetid://6764432408'
-        Instances2.ImageButton_1.ImageRectOffset = Vector2.new(200, 550)
+        Instances2.ImageButton_1.ImageRectOffset = Vector2.new(100, 150)
         Instances2.ImageButton_1.ImageRectSize = Vector2.new(50, 50)
         Instances2.ImageButton_1.BackgroundTransparency = 1
-        Instances2.ImageButton_1.Position = UDim2.new(0.88191884756088, 0, 0.24137926101685, 0)
-        Instances2.ImageButton_1.Rotation = 270
-        Instances2.ImageButton_1.Size = UDim2.new(0, 26, 0, 30)
+        Instances2.ImageButton_1.Position = UDim2.new(0.80481284856796, 0, 0.68000000715256, 0)
+        Instances2.ImageButton_1.Size = UDim2.new(0, 28, 0, 28)
         Instances2.ImageButton_1.ZIndex = 2
-        Instances2.ImageButton_1.Name = 'down'
+        Instances2.ImageButton_1.Name = 'right'
 
+        UpdateSize()
         Instances2.ImageButton_1.MouseButton1Down:Connect(function()
             pcall(Callback)
         end)
-        end
-    return InsideInternalLib
+    end
+    return insideLib;
 end
-
-return InternalLib
+return UiLib;
