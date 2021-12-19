@@ -240,7 +240,7 @@ function UiLib:CreateWindow(Title, Notice)
 
         Instances2.TextLabel_3.Parent = Instances2.Frame_1
         Instances2.TextLabel_3.Font = Enum.Font.SourceSans
-        Instances2.TextLabel_3.Text = "Credits:"..Credits
+        Instances2.TextLabel_3.Text = "Credits: "..Credits
         Instances2.TextLabel_3.TextColor3 = Color3.new(1, 1, 1)
         Instances2.TextLabel_3.TextSize = 15
         Instances2.TextLabel_3.TextXAlignment = Enum.TextXAlignment.Left
