@@ -5,7 +5,6 @@ function UiLib:CreateWindow(Title, Notice)
     local Notice = Notice or "Notice: Nothing Has Been Set"
     local Plr = game:GetService("Players").LocalPlayer.DisplayName
     local screenGui = Instance.new("ScreenGui",game:GetService("CoreGui"))
-    local content;
 
     local Instances = {
         ["Frame_3"] = Instance.new("Frame"),
