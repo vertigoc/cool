@@ -88,7 +88,7 @@ function UiLib:CreateWindow(Title, Notice)
 
     Instances.TextLabel_3.Parent = Instances.Frame_3
     Instances.TextLabel_3.Font = Enum.Font.SourceSans
-    Instances.TextLabel_3.Text = "Notice: "..Notice
+    Instances.TextLabel_3.Text = Notice
     Instances.TextLabel_3.TextColor3 = Color3.new(1, 1, 1)
     Instances.TextLabel_3.TextSize = 16
     Instances.TextLabel_3.TextXAlignment = Enum.TextXAlignment.Left
