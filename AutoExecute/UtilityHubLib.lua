@@ -59,6 +59,7 @@ function UiLib:CreateWindow(Title, Notice)
     Instances.TextLabel_1.Position = UDim2.new(0.15909090638161, 0, 0.024412214756012, 0)
     Instances.TextLabel_1.Size = UDim2.new(0, 180, 0, 21)
     Instances.TextLabel_1.Name = 'User'
+    Instances.TextLabel_1.TextWrapped = true
 
     Instances.TextLabel_2.Parent = Instances.Frame_3
     Instances.TextLabel_2.Font = Enum.Font.SourceSans
@@ -72,6 +73,7 @@ function UiLib:CreateWindow(Title, Notice)
     Instances.TextLabel_2.Position = UDim2.new(0.017676770687103, 0, -0.62344408035278, 0)
     Instances.TextLabel_2.Size = UDim2.new(0, 180, 0, 25)
     Instances.TextLabel_2.Name = 'Title'
+    Instances.TextLabel_2.TextWrapped = true
 
     local content, isReady = game:GetService("Players"):GetUserThumbnailAsync(game:GetService("Players").LocalPlayer.UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size60x60)
     Instances.ImageLabel_1.Image = content or "rbxasset://textures/ui/GuiImagePlaceholder.png"
@@ -98,6 +100,7 @@ function UiLib:CreateWindow(Title, Notice)
     Instances.TextLabel_3.Size = UDim2.new(0, 180, 0, 21)
     Instances.TextLabel_3.Name = 'Notice'
     Instances.TextLabel_3.RichText = true
+    Instances.TextLabel_3.TextWrapped = true
 
     Instances.Frame_4.Parent = Instances.Frame_3
     Instances.Frame_4.BackgroundColor3 = Color3.new(1, 1, 1)
@@ -228,6 +231,7 @@ function UiLib:CreateWindow(Title, Notice)
         Instances2.TextLabel_1.Size = UDim2.new(0, 172, 0, 22)
         Instances2.TextLabel_1.Name = 'Title'
         Instances2.TextLabel_1.RichText = true
+        Instances2.TextLabel_1.TextWrapped = true
 
         Instances2.TextLabel_2.Parent = Instances2.Frame_1
         Instances2.TextLabel_2.Font = Enum.Font.SourceSans
@@ -242,6 +246,7 @@ function UiLib:CreateWindow(Title, Notice)
         Instances2.TextLabel_2.Size = UDim2.new(0, 172, 0, 33)
         Instances2.TextLabel_2.Name = 'Desc'
         Instances.TextLabel_2.RichText = true
+        Instances.TextLabel_2.TextWrapped = true
 
         Instances2.TextLabel_3.Parent = Instances2.Frame_1
         Instances2.TextLabel_3.Font = Enum.Font.SourceSans
@@ -255,6 +260,7 @@ function UiLib:CreateWindow(Title, Notice)
         Instances2.TextLabel_3.Size = UDim2.new(0, 101, 0, 25)
         Instances2.TextLabel_3.Name = 'Credits'
         Instances.TextLabel_3.RichText = true
+        Instances.TextLabel_3.TextWrapped = true
 
         Instances2.ImageButton_1.Parent = Instances2.Frame_1
         Instances2.ImageButton_1.Image = 'rbxassetid://6764432408'
