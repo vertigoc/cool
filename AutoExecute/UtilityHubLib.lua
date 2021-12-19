@@ -152,7 +152,6 @@ function UiLib:CreateWindow(Title, Notice)
 
     function onKeyPress(actionName, userInputState, inputObject)
         if userInputState == Enum.UserInputState.Begin then
-            print("R was pressed")
             if toggle == false then
                  toggle = true
                   screenGui.Enabled = true
