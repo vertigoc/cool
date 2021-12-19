@@ -71,15 +71,14 @@ function UiLib:CreateWindow(Title, Notice)
     Instances.TextLabel_2.Size = UDim2.new(0, 180, 0, 25)
     Instances.TextLabel_2.Name = 'Title'
 
-    local Pfp;
+    local content, isReady = game:GetService("Players"):GetUserThumbnailAsync(game:GetService("Players").LocalPlayer.UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size60x60)
+    Instances.ImageLabel_1.Image = content
     Instances.ImageLabel_1.Parent = Instances.Frame_3
-    Instances.ImageLabel_1.Image = Pfp
+    Instances.ImageLabel_1.Image = content
     Instances.ImageLabel_1.BackgroundColor3 = Color3.new(1, 1, 1)
     Instances.ImageLabel_1.Position = UDim2.new(0.017676766961813, 0, 0.026556074619293, 0)
     Instances.ImageLabel_1.Size = UDim2.new(0, 48, 0, 48)
     Instances.ImageLabel_1.Name = 'Image'
-    local content, isReady = game:GetService("Players"):GetUserThumbnailAsync(game:GetService("Players").LocalPlayer.UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size60x60)
-    Instances.ImageLabel_1.Image = content
 
     Instances.UICorner_1.Parent = Instances.ImageLabel_1
     Instances.UICorner_1.CornerRadius = UDim.new(0, 999)
