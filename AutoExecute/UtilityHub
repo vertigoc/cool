@@ -1,5 +1,8 @@
+--Debug Vuln
+getgenv().debug=nil
+-------------------
 local Main = loadstring(game:HttpGet("https://raw.githubusercontent.com/vertigoc/cool/main/AutoExecute/UtilityHubLib.lua"))()
-local Options = Main:CreateWindow("Vertigos Script Pack V3 - F1 Toggle", "Last Update: 20/12/21")
+local Options = Main:CreateWindow("Vertigos Script Pack V3 - F1 Toggle", "Debug Has Been Disabled")
 --loadstring(game:HttpGet(""))()
 Options:CreateButton("Remote Spy Bloxburg", "Bloxburg Remote Spy", "Remote Spy Optimised For Bloxburg", "Introvert1337", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/vertigoc/cool/main/Utilty/BloxburgRemoteSpy.lua"))()
