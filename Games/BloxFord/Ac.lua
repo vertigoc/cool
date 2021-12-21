@@ -1,4 +1,4 @@
-if game.PlaceId == "5924471692" then
+if game.PlaceId == 5924471692 then
     game:GetService("Workspace").AntiChatFlood:Destroy()
     if game:GetService("Workspace"):FindFirstChild("Sorry_not_sorry") then
         game:GetService("Workspace"):FindFirstChild("Sorry_not_sorry"):Destroy()
