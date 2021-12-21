@@ -23,15 +23,6 @@ if game.PlaceId == "5924471692" then
 
         return eventbypass(self, ...)
     end)
-
-    for _, v in pairs(game:GetService("Players").LocalPlayer.Character:GetDescendants()) do
-        if v.ClassName == "StringValue" then
-            v.Parent:Destroy()
-            v.Parent:Destroy()
-            v.Parent:Destroy()
-            v.Parent:Destroy()
-        end
-    end
     getgenv().BypassSettings = {
        ["Crystal AntiCheat"] = true,
        ["Adonis"] = false,
