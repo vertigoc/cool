@@ -144,7 +144,7 @@ end)
 plr:CreateToggle("Collet Crops", false, function(state)
     getgenv().PickUpCrops = state
 end)
-plr:CreateToggle("Collet Printers", false, function(state)
+plr:CreateToggle("Collet Printers Cash", false, function(state)
     getgenv().Printers = state
 end)
 plr:CreateToggle("Steal All Printers", false, function(state)
