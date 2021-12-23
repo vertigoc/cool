@@ -131,6 +131,9 @@ end)
 plr:CreateToggle("Collet Crops", false, function(state)
     getgenv().PickUpCrops = state
 end)
+plr:CreateToggle("Collet Printers[Look Down]", false, function(state)
+    getgenv().Printers = state
+end)
 
 Car:CreateButton("Mod Car [Must Be In Car]", "Mod", function()
    for i, v in next, getgc(true) do
@@ -164,6 +167,18 @@ if getgenv().PickUpMyCash == true then
     for _,v in pairs(game:GetService("Workspace"):GetDescendants()) do
         if v.Name == "cash" or v.Name == "Crate" then
             game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
+            keypress(0x45)
+            wait()
+            keyrelease(0x45)
+            wait(1)
+        end
+    end
+end
+
+if getgenv().Printers == true then
+    for _,v in pairs(game:GetService("Workspace").Entities:GetDescendants()) do
+        if v.Name == "Money Printer" or v.Name == "OP Money Printer" then
+            game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = v.Part.CFrame
             keypress(0x45)
             wait()
             keyrelease(0x45)
