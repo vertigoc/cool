@@ -82,7 +82,7 @@ end)
 plr:CreateSlider("Walkspeed", 16, 250, function(value)
    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = value
 end)
-plr:CreateSlider("Walkspeed", 50, 300, function(value)
+plr:CreateSlider("Jump Power", 50, 300, function(value)
    game.Players.LocalPlayer.Character.Humanoid.JumpPower = value
 end)
 plr:CreateButton("Cool Name [Vertigo]", "Activate", function()
