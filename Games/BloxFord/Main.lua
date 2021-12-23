@@ -5,6 +5,7 @@ local plr = Pages:CreateTab("Player")
 local Car = Pages:CreateTab("Car")
 
 Main:CreateLabel("For Rep: Fuck you")
+Main:CreateLabel("All Coolect Stuff Is Faster")
 Main:CreateButton("Bypass AntiCheat [Laggy]", "Bypass", function()
     game:GetService("Workspace").AntiChatFlood:Destroy()
     if game:GetService("Workspace"):FindFirstChild("Sorry_not_sorry") then
@@ -143,7 +144,7 @@ end)
 plr:CreateToggle("Collet Crops", false, function(state)
     getgenv().PickUpCrops = state
 end)
-plr:CreateToggle("Collet Printers[Look Down]", false, function(state)
+plr:CreateToggle("Collet Printers", false, function(state)
     getgenv().Printers = state
 end)
 plr:CreateToggle("Steal All Printers", false, function(state)
