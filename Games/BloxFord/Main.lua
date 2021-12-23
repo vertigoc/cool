@@ -44,6 +44,20 @@ Main:CreateButton("Bypass AntiCheat [Laggy]", "Bypass", function()
     print("Iris Loaded")
 end)
 
+Main:CreateButton("Bypass AntiCheat [Less Laggy / Safe]", "Bypass", function()
+    game:GetService("Workspace").AntiChatFlood:Destroy()
+    if game:GetService("Workspace"):FindFirstChild("Sorry_not_sorry") then
+        game:GetService("Workspace"):FindFirstChild("Sorry_not_sorry"):Destroy()
+    end
+    if game:GetService("Players").LocalPlayer.PlayerScripts:FindFirstChild("AntiAutoclick") then
+        game:GetService("Players").LocalPlayer.PlayerScripts.AntiAutoclick:Destroy()
+    end
+    if game:GetService("Players").LocalPlayer.PlayerGui:FindFirstChild("NewLifeRule") then
+        game:GetService("Players").LocalPlayer.PlayerScripts.NewLifeRule:Destroy()
+    end
+    print("ac deleted")
+end)
+
 Main:CreateButton("Admin Check", "Activate", function()
     Admins = {306654785, 25074343, 4549187, 1335586467, 60625091, 74203010, 87783947, 205021168, 514766723, 1654610911, 1523203904, 1576824898, 1576824898, 2644516865, 183793140, 290515888, 1607698411, 184456421, 1578667424, 243383919, 129513460, 660028340, 214470, 66869488, 72584476, 66791249, 355123078, 743239452, 73492985, 1846501946, 270645552, 189838373, 20129297, 152957945, 436332770, 172017979, 311255332, 90430360, 889840086}
 
