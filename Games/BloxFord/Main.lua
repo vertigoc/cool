@@ -5,7 +5,7 @@ local plr = Pages:CreateTab("Player")
 local Car = Pages:CreateTab("Car")
 
 Main:CreateLabel("For Rep: Fuck you")
-Main:CreateLabel("All Coolect Stuff Is Faster")
+Main:CreateLabel("All Collect Stuff Is Faster")
 Main:CreateButton("Bypass AntiCheat [Laggy]", "Bypass", function()
     game:GetService("Workspace").AntiChatFlood:Destroy()
     if game:GetService("Workspace"):FindFirstChild("Sorry_not_sorry") then
