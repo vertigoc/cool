@@ -146,6 +146,9 @@ end)
 plr:CreateToggle("Collet Printers[Look Down]", false, function(state)
     getgenv().Printers = state
 end)
+plr:CreateToggle("Steal All Printers", false, function(state)
+    getgenv().PrintersGrab = state
+end)
 
 Car:CreateButton("Mod Car [Must Be In Car]", "Mod", function()
    for i, v in next, getgc(true) do
@@ -163,13 +166,40 @@ end
 end)
 
 while true do wait(2)
+getgenv().PickUpCrops = false
+
 if getgenv().PickUpCrops == true then
     for _,v in pairs(game:GetService("Workspace"):GetDescendants()) do
         if v.Name == "Apple" or v.Name == "BlueBerryPlantMesh" or v.Name == "TomatoPlantMesh" then
             game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
-            keypress(0x45)
-            wait()
-            keyrelease(0x45)
+            if v.Name == "Apple" then
+                local A_1 = v:FindFirstChild("droppeditem")
+                local A_2 = 
+                {
+                    [1] = "Pick Up", 
+                    [2] = "E"
+                }
+                local Event = game:GetService("ReplicatedStorage").Events.ActionHandler
+                Event:FireServer(A_1, A_2)
+            elseif v.Name == "BlueBerryPlantMesh" then
+                local A_1 = v:FindFirstChild("bberryplant")
+                local A_2 = 
+                {
+                    [1] = "Harvest", 
+                    [2] = "E"
+                }
+                local Event = game:GetService("ReplicatedStorage").Events.ActionHandler
+                Event:FireServer(A_1, A_2)
+            else
+                local A_1 = v:FindFirstChild("tomatoplant")
+                local A_2 = 
+                {
+                    [1] = "Harvest", 
+                    [2] = "E"
+                }
+                local Event = game:GetService("ReplicatedStorage").Events.ActionHandler
+                Event:FireServer(A_1, A_2)
+            end
             wait(1)
         end
     end
@@ -179,9 +209,25 @@ if getgenv().PickUpMyCash == true then
     for _,v in pairs(game:GetService("Workspace"):GetDescendants()) do
         if v.Name == "cash" or v.Name == "Crate" then
             game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = v.CFrame
-            keypress(0x45)
-            wait()
-            keyrelease(0x45)
+            if v.Name == "cash" then
+                local A_1 = v:FindFirstChild("cashmoney")
+                local A_2 = 
+                {
+                    [1] = "Collect", 
+                    [2] = "E"
+                }
+                local Event = game:GetService("ReplicatedStorage").Events.ActionHandler
+                Event:FireServer(A_1, A_2)
+                else
+                    local A_1 = v:FindFirstChild("lootcrate")
+                    local A_2 = 
+                    {
+                        [1] = "Pick Up", 
+                        [2] = "E"
+                    }
+                    local Event = game:GetService("ReplicatedStorage").Events.ActionHandler
+                    Event:FireServer(A_1, A_2)
+            end
             wait(1)
         end
     end
@@ -191,10 +237,50 @@ if getgenv().Printers == true then
     for _,v in pairs(game:GetService("Workspace").Entities:GetDescendants()) do
         if v.Name == "Money Printer" or v.Name == "OP Money Printer" then
             game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = v.Part.CFrame
-            keypress(0x45)
+            wait(.2)
+            local A_1 = v.Main.moneyprinter
+            local A_2 = 
+            {
+                [1] = "Collect", 
+                [2] = "E"
+            }
+            local Event = game:GetService("ReplicatedStorage").Events.ActionHandler
+            Event:FireServer(A_1, A_2)
             wait()
-            keyrelease(0x45)
-            wait(1)
+        end
+    end
+end
+
+if getgenv().PrintersGrab == true then
+wait(2)
+    for _,v in pairs(game:GetService("Workspace").Entities:GetDescendants()) do
+        if v.Name == "Money Printer" or v.Name == "Upgraded Money Printer" or v.Name == "OP Money Printer" then
+            if v.Part.CFrame == "472.092499, 26.5716248, -51.4557571" then
+                return
+            else
+                game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = v.Part.CFrame
+                wait(.3)
+                local A_1 = v.Main.moneyprinter
+                local A_2 = 
+                {
+                    [1] = "Carry", 
+                    [2] = "R"
+                }
+                local Event = game:GetService("ReplicatedStorage").Events.ActionHandler
+                Event:FireServer(A_1, A_2)
+                wait(.5)
+                game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(330.071411, 40.1731453, -184.473297)
+                wait(.2)
+                local A_1 = v.Main.moneyprinter
+                local A_3 = 
+                {
+                    [1] = "Drop", 
+                    [2] = "R"
+                }
+                local Event = game:GetService("ReplicatedStorage").Events.ActionHandler
+                Event:FireServer(A_1, A_3)
+                wait(.2)
+            end
         end
     end
 end
