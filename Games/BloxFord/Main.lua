@@ -100,13 +100,13 @@ plr:CreateSlider("Jump Power", 50, 300, function(value)
    game.Players.LocalPlayer.Character.Humanoid.JumpPower = value
 end)
 plr:CreateButton("RandomName", "Activate", function()
+local GenNew = true
 local random = Random.new()
 local letters = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','`','!','"','£','$','%','^','&','*','(',')','-','+','=','{','}','[',']',';',':','~','<',',','.','>','/','?'}
 
 function getRandomLetter()
 	return letters[random:NextInteger(1,#letters)]
 end
-
 function getRandomString(length, includeCapitals)
 	local length = length or 10
 	local str = ''
@@ -120,9 +120,21 @@ function getRandomString(length, includeCapitals)
 	return str
 end
 
-local A_1 = getRandomString(math.random(3,15), true)
-local Event = game:GetService("ReplicatedStorage").Events.RpName
-Event:FireServer(A_1)
+function Generate()
+    local A_1 = getRandomString(math.random(3,15), true)
+    local Event = game:GetService("ReplicatedStorage").Events.RpName
+    Event:FireServer(A_1) 
+end
+local Wow = game:GetService("Players").LocalPlayer.RpName
+local str = Wow.Value
+
+Generate()
+
+Wow:GetPropertyChangedSignal("Value"):Connect(function()
+    if string.find(Wow.Value, "#") then
+        Generate()
+    end
+end)
 end)
 
 plr:CreateToggle("Collet Crates / Cash", false, function(state)
