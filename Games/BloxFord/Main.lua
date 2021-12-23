@@ -100,10 +100,29 @@ plr:CreateSlider("Jump Power", 50, 300, function(value)
    game.Players.LocalPlayer.Character.Humanoid.JumpPower = value
 end)
 plr:CreateButton("RandomName", "Activate", function()
-        local name = math.random(362, 7587321)
-    local A_1 = name
-    local Event = game:GetService("ReplicatedStorage").Events.RpName
-    Event:FireServer(A_1)
+local random = Random.new()
+local letters = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','`','!','"','£','$','%','^','&','*','(',')','-','+','=','{','}','[',']',';',':','~','<',',','.','>','/','?'}
+
+function getRandomLetter()
+	return letters[random:NextInteger(1,#letters)]
+end
+
+function getRandomString(length, includeCapitals)
+	local length = length or 10
+	local str = ''
+	for i=1,length do
+		local randomLetter = getRandomLetter()
+		if includeCapitals and random:NextNumber() > .5 then
+			randomLetter = string.upper(randomLetter)
+		end
+		str = str .. randomLetter
+	end
+	return str
+end
+
+local A_1 = getRandomString(math.random(3,15), true)
+local Event = game:GetService("ReplicatedStorage").Events.RpName
+Event:FireServer(A_1)
 end)
 
 plr:CreateToggle("Collet Crates / Cash", false, function(state)
