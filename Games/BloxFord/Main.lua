@@ -1,11 +1,11 @@
 local Lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/vertigoc/cool/main/Libs/VertigosLib.lua"))()
-local Main = Lib:CreateWindow("BloxWank", "LightMode")
-local MainTab = Main:CreateTab("Main")
-local Plr = Main:CreateTab("Player")
-local Car = Main:CreateTab("Car")
+local Pages = Lib:CreateWindow("BloxWank", "LightMode")
+local Main = Pages:CreateTab("Main")
+local plr = Pages:CreateTab("Player")
+local Car = Pages:CreateTab("Car")
 
-MainTab:CreateLabel("For Rep: Fuck you")
-MainTab:CreateButton("Bypass AntiCheat [Laggy]", "Bypass", function()
+Main:CreateLabel("For Rep: Fuck you")
+Main:CreateButton("Bypass AntiCheat [Laggy]", "Bypass", function()
     game:GetService("Workspace").AntiChatFlood:Destroy()
     if game:GetService("Workspace"):FindFirstChild("Sorry_not_sorry") then
         game:GetService("Workspace"):FindFirstChild("Sorry_not_sorry"):Destroy()
@@ -44,7 +44,7 @@ MainTab:CreateButton("Bypass AntiCheat [Laggy]", "Bypass", function()
     print("Iris Loaded")
 end)
 
-MainTab:CreateButton("Admin Check", "Activate", function()
+Main:CreateButton("Admin Check", "Activate", function()
     Admins = {306654785, 25074343, 4549187, 1335586467, 60625091, 74203010, 87783947, 205021168, 514766723, 1654610911, 1523203904, 1576824898, 1576824898, 2644516865, 183793140, 290515888, 1607698411, 184456421, 1578667424, 243383919, 129513460, 660028340, 214470, 66869488, 72584476, 66791249, 355123078, 743239452, 73492985, 1846501946, 270645552, 189838373, 20129297, 152957945, 436332770, 172017979, 311255332, 90430360, 889840086}
 
     function CheckAdmin()
@@ -128,14 +128,14 @@ plr:CreateButton("Cool Name [Vertigo]", "Activate", function()
     wait(1)
 end)
 
-Plr:CreateToggle("Collet Crates / Cash", false, function(state)
+plr:CreateToggle("Collet Crates / Cash", false, function(state)
     getgenv().PickUpMyCash = state
 end)
-Plr:CreateToggle("Collet Crates / Cash", false, function(state)
+plr:CreateToggle("Collet Crates / Cash", false, function(state)
     getgenv().PickUpCrops = state
 end)
 
-CarMain:CreateButton("Mod Car [Must Be In Car]", "Mod", function()
+Car:CreateButton("Mod Car [Must Be In Car]", "Mod", function()
    for i, v in next, getgc(true) do
     if type(v) == "table" and rawget(v, "WheelFriction") then
         v.WheelFriction = math.huge
