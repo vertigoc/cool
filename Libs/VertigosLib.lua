@@ -244,7 +244,7 @@ function Lib:CreateWindow(Name, Theme)
 
             UpdateSize()
         end
-        function InsideTabs:CreateButton(Text, Callback)
+        function InsideTabs:CreateButton(Text, ButtonText, Callback)
             UpdateSize()
             Text = Text or "Button"
             Callback = Callback or function () end
@@ -293,7 +293,7 @@ function Lib:CreateWindow(Name, Theme)
             
             ButtonInstances.TextButton_2.Parent = ButtonInstances.Frame_5
             ButtonInstances.TextButton_2.Font = Enum.Font.SourceSans
-            ButtonInstances.TextButton_2.Text = 'Activate'
+            ButtonInstances.TextButton_2.Text = ButtonText
             ButtonInstances.TextButton_2.TextColor3 = Theme.TextColor
             ButtonInstances.TextButton_2.TextSize = 18
             ButtonInstances.TextButton_2.BackgroundColor3 = Theme.ActiveColor
@@ -907,4 +907,3 @@ Tab1:CreateKeyBind("Bind Ui", Enum.KeyCode.KeypadOne, function(yes)
     print(yes)
 end)
 ]]
-
