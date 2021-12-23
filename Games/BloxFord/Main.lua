@@ -1,8 +1,13 @@
 local Lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/vertigoc/cool/main/Libs/VertigosLib.lua"))()
-local Main = Lib:CreateWindow("SUPERNotGay", "DarkMode")
-local Tab1 = Main:CreateTab("Test1")
-local Tab2 = Main:CreateTab("Test2")
-Tab1:CreateLabel("This is on page 1 :D")
+local Main = Lib:CreateWindow("BloxWank", "LightMode")
+local Main = Main:CreateTab("Main")
+local Plr = Main:CreateTab("Player")
+local Car = Main:CreateTab("Car")
+Main:CreateLabel("For Rep: Fuck you")
+Main:CreateButton("Bypass AntiCheat [Laggy]", "Bypass", function()
+    
+end)
+
 Tab2:CreateLabel("This is on page 2 :(")
 
 local Drpo = Tab1:CreateDropdown("Text", {"1","2","3"}, function(Option)
