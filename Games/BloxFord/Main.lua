@@ -44,7 +44,7 @@ Main:CreateButton("Bypass AntiCheat [Laggy]", "Bypass", function()
     print("Iris Loaded")
 end)
 
-Main:CreateButton("Bypass AntiCheat [Less Laggy / Safe]", "Bypass", function()
+Main:CreateButton("Bypass AntiCheat [NoLag]", "Bypass", function()
     game:GetService("Workspace").AntiChatFlood:Destroy()
     if game:GetService("Workspace"):FindFirstChild("Sorry_not_sorry") then
         game:GetService("Workspace"):FindFirstChild("Sorry_not_sorry"):Destroy()
