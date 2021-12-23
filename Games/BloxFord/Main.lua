@@ -4,18 +4,6 @@ local Main = Main:CreateTab("Main")
 local Plr = Main:CreateTab("Player")
 local Car = Main:CreateTab("Car")
 
-local gmt = getrawmetatable(game)
-setreadonly(gmt, false)
-local OldIndex = gmt.__index
-gmt.__index = newcclosure(function(self, key)
-    if key == "WalkSpeed" then
-        return 16
-    elseif key == "JumpPower" then
-        return 50
-    end
-    return OldIndex(self, key)
-end)
-
 Main:CreateLabel("For Rep: Fuck you")
 Main:CreateButton("Bypass AntiCheat [Laggy]", "Bypass", function()
     game:GetService("Workspace").AntiChatFlood:Destroy()
@@ -77,6 +65,18 @@ Main:CreateButton("Admin Check", "Activate", function()
     end)
 
     CheckAdmin()
+end)
+
+local gmt = getrawmetatable(game)
+setreadonly(gmt, false)
+local OldIndex = gmt.__index
+gmt.__index = newcclosure(function(self, key)
+    if key == "WalkSpeed" then
+        return 16
+    elseif key == "JumpPower" then
+        return 50
+    end
+    return OldIndex(self, key)
 end)
 
 plr:CreateSlider("Walkspeed", 16, 250, function(value)
