@@ -99,47 +99,11 @@ end)
 plr:CreateSlider("Jump Power", 50, 300, function(value)
    game.Players.LocalPlayer.Character.Humanoid.JumpPower = value
 end)
-plr:CreateButton("Cool Name [Vertigo]", "Activate", function()
-    local A_1 = "V"
+plr:CreateButton("RandomName", "Activate", function()
+        local name = math.random(362, 7587321)
+    local A_1 = name
     local Event = game:GetService("ReplicatedStorage").Events.RpName
     Event:FireServer(A_1)
-    wait(1)
-    local A_1 = "Ve"
-    local Event = game:GetService("ReplicatedStorage").Events.RpName
-    Event:FireServer(A_1)
-    wait(1)
-    local A_1 = "Ver"
-    local Event = game:GetService("ReplicatedStorage").Events.RpName
-    Event:FireServer(A_1)
-    wait(1)
-    local A_1 = "Vert"
-    local Event = game:GetService("ReplicatedStorage").Events.RpName
-    Event:FireServer(A_1)
-    wait(1)
-    local A_1 = "Verti"
-    local Event = game:GetService("ReplicatedStorage").Events.RpName
-    Event:FireServer(A_1)
-    wait(1)
-    local A_1 = "Vertig"
-    local Event = game:GetService("ReplicatedStorage").Events.RpName
-    Event:FireServer(A_1)
-    wait(1)
-    local A_1 = "Vertigo"
-    local Event = game:GetService("ReplicatedStorage").Events.RpName
-    Event:FireServer(A_1)
-    wait(1)
-    local A_1 = "."
-    local Event = game:GetService("ReplicatedStorage").Events.RpName
-    Event:FireServer(A_1)
-    wait(1)
-    local A_1 = ".."
-    local Event = game:GetService("ReplicatedStorage").Events.RpName
-    Event:FireServer(A_1)
-    wait(1)
-    local A_1 = "..."
-    local Event = game:GetService("ReplicatedStorage").Events.RpName
-    Event:FireServer(A_1)
-    wait(1)
 end)
 
 plr:CreateToggle("Collet Crates / Cash", false, function(state)
