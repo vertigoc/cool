@@ -564,7 +564,7 @@ function Lib:CreateWindow(Name, Theme)
             
             SliderInstances.TextLabel_3.Parent = SliderInstances.Frame_5
             SliderInstances.TextLabel_3.Font = Enum.Font.SourceSans
-            SliderInstances.TextLabel_3.Text = '16'
+            SliderInstances.TextLabel_3.Text = Min
             SliderInstances.TextLabel_3.TextColor3 = Theme.TextColor
             SliderInstances.TextLabel_3.TextSize = 19
             SliderInstances.TextLabel_3.TextXAlignment = Enum.TextXAlignment.Right
