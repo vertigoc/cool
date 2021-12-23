@@ -1,5 +1,5 @@
 local Lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/vertigoc/cool/main/Libs/VertigosLib.lua"))()
-local Pages = Lib:CreateWindow("BloxWank", "LightMode")
+local Pages = Lib:CreateWindow("BloxWank", "DarkMode")
 local Main = Pages:CreateTab("Main")
 local plr = Pages:CreateTab("Player")
 local Car = Pages:CreateTab("Car")
