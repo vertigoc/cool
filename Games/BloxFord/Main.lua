@@ -167,8 +167,6 @@ end
 end)
 
 while true do wait(2)
-getgenv().PickUpCrops = false
-
 if getgenv().PickUpCrops == true then
     for _,v in pairs(game:GetService("Workspace"):GetDescendants()) do
         if v.Name == "Apple" or v.Name == "BlueBerryPlantMesh" or v.Name == "TomatoPlantMesh" then
