@@ -131,7 +131,7 @@ end)
 plr:CreateToggle("Collet Crates / Cash", false, function(state)
     getgenv().PickUpMyCash = state
 end)
-plr:CreateToggle("Collet Crates / Cash", false, function(state)
+plr:CreateToggle("Collet Crops", false, function(state)
     getgenv().PickUpCrops = state
 end)
 
