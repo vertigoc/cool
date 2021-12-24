@@ -212,6 +212,14 @@ end
 end
 end)
         end)
+            Car:CreateToggle("Fuck Chat [WILL BAN]", false, function(state)
+                        while state do wait()
+                                local A_1 = "__________________VERTIGO GANG_____________________"
+local A_2 = "All"
+local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest
+Event:FireServer(A_1, A_2)
+                                end
+    end)
     
     while true do wait(2)
     if getgenv().PickUpCrops == true then
