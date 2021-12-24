@@ -123,41 +123,24 @@ if game.PlaceId == 5924471692 then
        game.Players.LocalPlayer.Character.Humanoid.JumpPower = value
     end)
     plr:CreateButton("RandomName", "Activate", function()
-    local GenNew = true
-    local random = Random.new()
-    local letters = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','`','!','"','£','$','%','^','&','*','(',')','-','+','=','{','}','[',']',';',':','~','<',',','.','>','/','?','我','很','高','兴','你','呢','，','？','Г','Б','Д','Ё','Ж','Я','㊕ ','㊐','㊋','㊅','㊍','㊋','㊐','㊅','㊊','㊋','㊐','㊇','㊖','㊇','㊙','㊇','㊕','㊗','㊋','㊉','㊒','㊅','㊒','㊒','㊎','ȧ̜͔̦̗͗̾̈́̒'}
-    
-    function getRandomLetter()
-        return letters[random:NextInteger(1,#letters)]
-    end
-    function getRandomString(length, includeCapitals)
-        local length = length or 10
-        local str = ''
-        for i=1,length do
-            local randomLetter = getRandomLetter()
-            if includeCapitals and random:NextNumber() > .5 then
-                randomLetter = string.upper(randomLetter)
-            end
-            str = str .. randomLetter
-        end
-        return str
-    end
-    
-    function Generate()
-        local A_1 = getRandomString(math.random(3,15), true)
-        local Event = game:GetService("ReplicatedStorage").Events.RpName
-        Event:FireServer(A_1) 
-    end
-    local Wow = game:GetService("Players").LocalPlayer.RpName
-    local str = Wow.Value
-    
-    Generate()
-    
-    Wow:GetPropertyChangedSignal("Value"):Connect(function()
-        if string.find(Wow.Value, "#") then
-            Generate()
-        end
-    end)
+                        local RandomName;
+local letters = {'Joshua', 'Alan', 'Harry', 'Ryan', 'Master Cheif', 'F4llen', 'sky', 'Danny', 'Give Gun', 'CarLover312', 'Banker', 'harry', 'jacob', 'alfie', 'alex', 'micheal', 'josh', 'chris', 'callum', 'billy', 'aaron', 'shaun', 'Venom', 'Eagle', 'Clifley','Psycho', 'Victor','Veldora', 'Pro gamer', 'XboxIsBad', 'Greyenna','RDS','Sniper','Splash','Wave','hyper','RobotYes', 'PixelOkay', 'SpaceInside', 'HouseTree', 'CarpetNo', 'TescoDeals', 'AsdaHelps', 'blob','gmodpro','Greatspace','Almighty','mysticpizza','sparky','albert','jaden','BigBill','Buck','Valance','SugarCandy','SkulIll','xxHepticxx','CaliforniaLove','FatTony','sunny','Police Boss','LazyGamer','bread','broosh','RedFox04','evilDevil','BaconNoob','Borris', 'OldDriver','Paul Larson','DarkLord','Misa','magicZak10','UserNotFound','moeLo','WetRain','GemSplash','K9 Sniffer','connor','frostyFish','TimeLocked2','mason','Night','Magnitude','Dodgy','Incoming','Nightcrawlers','Scourge','Defiant','Blackstock','Serenity','Dretron','Bloodline','Dreamteam','Dominance','Cobra'}
+
+function getRandom()
+       local randomNumber = math.random(1, #letters)
+        RandomName = letters[randomNumber]
+       print("Chosen "..RandomName.."!")
+end
+getRandom()
+
+function Generate()
+    local A_1 = RandomName
+    local Event = game:GetService("ReplicatedStorage").Events.RpName
+    Event:FireServer(A_1) 
+end
+
+Generate()
+
     end)
     
     plr:CreateToggle("Collet Crates / Cash", false, function(state)
