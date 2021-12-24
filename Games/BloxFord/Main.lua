@@ -172,7 +172,7 @@ if game.PlaceId == 5924471692 then
     plr:CreateToggle("Steal All Printers", false, function(state)
         getgenv().PrintersGrab = state
     end)
-    plr:CreateToggle("Destroy Printers", false, function(state)
+    plr:CreateToggle("Destroy Printers [Cop]", false, function(state)
         getgenv().DESPrinters = state
     end)
     plr:CreateToggle("Take From Shipments", false, function(state)
