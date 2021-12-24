@@ -213,8 +213,10 @@ end
 end)
         end)
             Car:CreateToggle("Fuck Chat [WILL BAN]", false, function(state)
-                        while state do wait()
-                                local A_1 = "__________________VERTIGO GANG_____________________"
+                        getgenv().FuckChat = state
+                        
+                        while getgenv().FuckChat == true do wait()
+                                local A_1 = "_______________________________________"
 local A_2 = "All"
 local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest
 Event:FireServer(A_1, A_2)
