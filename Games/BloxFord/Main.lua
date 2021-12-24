@@ -3,7 +3,7 @@ if game.PlaceId == 5924471692 then
     local Pages = Lib:CreateWindow("BloxWank", "DarkMode")
     local Main = Pages:CreateTab("Main")
     local plr = Pages:CreateTab("Player")
-    local Car = Pages:CreateTab("Car")
+    local Car = Pages:CreateTab("Misc")
     
     Main:CreateLabel("For Rep: Fuck you")
     Main:CreateLabel("All Collect Stuff Is Faster")
@@ -179,6 +179,21 @@ if game.PlaceId == 5924471692 then
         end
     end
     end)
+    Car:CreateButton("Mod Gun [Must Be Holding]", "Mod", function()
+       local tool;
+
+for _,v in pairs(game:GetService("Players").LocalPlayer.Character:GetChildren()) do
+    if v:IsA("Tool") then
+        tool = v.Name
+    end
+end
+
+game:GetService("Players").LocalPlayer.Character[tool].ammo:GetPropertyChangedSignal("Value"):Connect(function()
+    local max = game:GetService("Players").LocalPlayer.Character[tool].Config.capacity.Value
+    game:GetService("Players").LocalPlayer.Character[tool].ammo.Value = max
+end)
+    end)
+    
     
     while true do wait(2)
     if getgenv().PickUpCrops == true then
