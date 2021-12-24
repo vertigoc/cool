@@ -1,3 +1,4 @@
+if game.PlaceId == 5924471692 then
 local Lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/vertigoc/cool/main/Libs/VertigosLib.lua"))()
 local Pages = Lib:CreateWindow("BloxWank", "DarkMode")
 local Main = Pages:CreateTab("Main")
@@ -283,8 +284,4 @@ wait(2)
     end
 end
 end
-        
-        
-        
-        
-      
+end
