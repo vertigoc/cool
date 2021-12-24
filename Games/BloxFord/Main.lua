@@ -6,7 +6,7 @@ if game.PlaceId == 5924471692 then
     local Car = Pages:CreateTab("Misc")
     
     Main:CreateLabel("For Rep: Fuck you")
-    Main:CreateLabel("All Collect Stuff Is Faster")
+    Main:CreateLabel("Mod Gun Added [Misc]")
     Main:CreateButton("Bypass AntiCheat [Laggy]", "Bypass", function()
         game:GetService("Workspace").AntiChatFlood:Destroy()
         if game:GetService("Workspace"):FindFirstChild("Sorry_not_sorry") then
