@@ -57,6 +57,17 @@ Main:CreateButton("Bypass AntiCheat [NoLag]", "Bypass", function()
     if game:GetService("Players").LocalPlayer.PlayerGui:FindFirstChild("NewLifeRule") then
         game:GetService("Players").LocalPlayer.PlayerScripts.NewLifeRule:Destroy()
     end
+	getgenv().BypassSettings = {
+       ["Crystal AntiCheat"] = true,
+       ["Adonis"] = false,
+
+       ["Anti-Obfuscated Scripts"] = false,-- CANNOT BE ENABLED WITH CRYSTAL This will block any obfuscated script on the client from running (Not executed by your exploit thought)
+       ["Random"] = true, -- Will disallow scripts calling, GetPropertyChanged signal on WalkSpeed, JumpPower, Gravity, Health, LogService
+
+       ["Enable Kill Logs"] = true, -- Say if you want to get told what's bypassed
+    }
+
+    loadstring(game:HttpGet("https://irisapp.ca/TheGoodSucc/iAntiCheat.lua"))()
     print("ac deleted")
 end)
 
