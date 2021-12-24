@@ -192,8 +192,8 @@ end)
     end)
     
       
-        Car:CreateButton("Mod Car [Must Be In Car]", "Mod", function()
-                   getgenv().HeadSize = 12.5
+        Car:CreateButton("Big Hit Boxes", "Activate", function()
+                   getgenv().HeadSize = 3
 getgenv().Disabled = true
  
 game:GetService('RunService').RenderStepped:connect(function()
