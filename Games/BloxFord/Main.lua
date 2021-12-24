@@ -68,8 +68,7 @@ Main:CreateButton("Admin Check", "Activate", function()
     if v2.UserId == v then
     game:GetService'Players'.LocalPlayer:Kick("Admin Fount: "..v)
     else
-    print("No Admins, Time: "..os.date())
-    print("=============================================")
+    print("No Admins")
     end
     end
     end
