@@ -161,6 +161,9 @@ if game.PlaceId == 5924471692 then
     plr:CreateToggle("Steal All Printers", false, function(state)
         getgenv().PrintersGrab = state
     end)
+    plr:CreateToggle("Destroy Printers", false, function(state)
+        getgenv().DESPrinters = state
+    end)
     plr:CreateToggle("Take From Shipments", false, function(state)
         getgenv().ShipMentTake = state
     end)
@@ -278,7 +281,23 @@ end)
             end
         end
     end
-    
+        if getgenv().DESPrinters == true then
+        for _,v in pairs(game:GetService("Workspace").Entities:GetDescendants()) do
+            if v.Name == "Money Printer" or v.Name == "Upgraded Money Printer" or v.Name == "OP Money Printer" then
+                game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame = v.Part.CFrame
+                wait(.2)
+                local A_1 = v.Main.moneyprinter
+                local A_2 = 
+                {
+                    [1] = "Destroy", 
+                    [2] = "E"
+                }
+                local Event = game:GetService("ReplicatedStorage").Events.ActionHandler
+                Event:FireServer(A_1, A_2)
+                wait()
+            end
+        end
+    end
     if getgenv().PrintersGrab == true then
     wait(2)
         for _,v in pairs(game:GetService("Workspace").Entities:GetDescendants()) do
