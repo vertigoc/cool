@@ -217,8 +217,7 @@ end)
                         getgenv().FuckChat = state
                         
                         while getgenv().FuckChat == true do wait()
-                                local A_1 = "
-                                _______________________________"
+                                local A_1 = "_______________________________"
 local A_2 = "All"
 local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest
 Event:FireServer(A_1, A_2)
