@@ -194,7 +194,7 @@ end)
     
       
         Car:CreateButton("Big Hit Boxes", "Activate", function()
-                   getgenv().HeadSize = 3
+                   getgenv().HeadSize = 5
 getgenv().Disabled = true
  
 game:GetService('RunService').RenderStepped:connect(function()
