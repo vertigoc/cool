@@ -60,7 +60,7 @@ end
 
 function Lib:CreateWindow(Name, Theme, Keybind)
     Name = Name or "Un Named"
-    Keybind = Keybind or Enum.KeyCode.Insert
+    Keybind = Keybind or Insert
     if Theme == "DarkMode" then
         Theme = Themes.DarkMode
     elseif Theme == "LightMode" then
