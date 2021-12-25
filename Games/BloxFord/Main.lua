@@ -126,7 +126,7 @@ if game.PlaceId == 5924471692 then
 local RandomName
                         
 --local letters = {'holamellamopepe777','Foxy08','Doge','Love_Anime','ytyhgtgfd','SlovakUnit123','Bradley2k20keeed','grunt','Officer_Neon','WRYYYYYYYYY123123','alien_123','amogus6664567','the_bacon','oghos2013','zarivolk','ddraedonn','REDACTED','Yeshima_Mizaki','Russop1985','RedFox04','Trunks','TBB_chad','Newa0170','stickhero222','julungpujut','Arthur_AirBender','NicccoTheBoat','RrnzIPotato','NicholasWatercraft','Rbuildup','OlavPhillip','thijs1','zhantxre','IrroxalV3','Babykleding','TomisSokolovRe','Max_M68','TommyRide1','matehan201011','BadHeatpheonix','Frezee12345','burdor35','AX_X7X','Aah347','bog2010d','Perccivus','CAG_0PERATOR','michat77','haker537','skeletonproattacker','PHANTOM_BLOX2020','merenta121','Potato2000p','benja39213','dido200810','LeoBatsbak','XxrafharailxX','maxkillerday','leopro86432','Ezeasyboy','wolley3364','valentin2347','theredguy2005','killer08006000','amjadggi','tommyj63','Mikeydevman','j63AlexiaGamingNRG','tommyj63','louis555557','andrepavo1','niemalsjaper','Trex19101','509gameboy','tateepoochpooch','AfrikaKorpsss','viorel3456789','lukpro070945','TheRelaxingEndings','ironman76721','FrostEventPlease','DarrenCott','PopoTheMegaPro','Editthebest09','Wanony2','beninator1673','2006AYMANE2','0x_Pasha','sonder5529','aryamorade','AntonchikCarton'}
-local letters = {'amogus6664567'}
+local letters = {'amogus6664'}
                         
 function getRandom()
        local randomNumber = math.random(1, #letters)
