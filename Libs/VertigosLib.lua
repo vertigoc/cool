@@ -1,4 +1,5 @@
 local Lib = {}
+
 local Themes = {
     DarkMode = {
         ["Background"] = Color3.new(0.137254, 0.137254, 0.137254),
@@ -20,8 +21,46 @@ local Themes = {
     }
 }
 
-function Lib:CreateWindow(Name, Theme)
+local input = game:GetService("UserInputService")
+
+function Lib:DraggingEnabled(frame, parent)
+        
+    parent = parent or frame
+
+    local dragging = false
+    local dragInput, mousePos, framePos
+
+    frame.InputBegan:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 then
+            dragging = true
+            mousePos = input.Position
+            framePos = parent.Position
+            
+            input.Changed:Connect(function()
+                if input.UserInputState == Enum.UserInputState.End then
+                    dragging = false
+                end
+            end)
+        end
+    end)
+
+    frame.InputChanged:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseMovement then
+            dragInput = input
+        end
+    end)
+
+    input.InputChanged:Connect(function(input)
+        if input == dragInput and dragging then
+            local delta = input.Position - mousePos
+            parent.Position  = UDim2.new(framePos.X.Scale, framePos.X.Offset + delta.X, framePos.Y.Scale, framePos.Y.Offset + delta.Y)
+        end
+    end)
+end
+
+function Lib:CreateWindow(Name, Theme, Keybind)
     Name = Name or "Un Named"
+    Keybind = Keybind or Enum.KeyCode.Insert
     if Theme == "DarkMode" then
         Theme = Themes.DarkMode
     elseif Theme == "LightMode" then
@@ -48,7 +87,23 @@ function Lib:CreateWindow(Name, Theme)
         ["Frame_4"] = Instance.new("Frame")
     }
 
+    Lib:DraggingEnabled(Instances.Frame_2 ,Instances.Frame_1)
+
     screenGui.Name = "VertigosLib"
+
+    local toggled = true
+
+    input.InputBegan:Connect(function(keycode)
+        if keycode.KeyCode == Enum.KeyCode[Keybind] then
+            if toggled == true then
+                toggled = false
+                screenGui.Enabled = false
+                else
+                    toggled = true
+                    screenGui.Enabled = true
+            end
+        end
+    end)
 
     Instances.Frame_1.Parent = screenGui
     Instances.Frame_1.BackgroundColor3 = Theme.Background
@@ -56,8 +111,6 @@ function Lib:CreateWindow(Name, Theme)
     Instances.Frame_1.Position = UDim2.new(0.29411765933037, 0, 0.25237190723419, 0)
     Instances.Frame_1.Size = UDim2.new(0, 408, 0, 283)
     Instances.Frame_1.Name = 'Main'
-    Instances.Frame_1.Active = true
-    Instances.Frame_1.Draggable = true
 
     Instances.UICorner_1.Parent = Instances.Frame_1
     Instances.UICorner_1.CornerRadius = UDim.new(0, 4)
