@@ -58,9 +58,8 @@ function Lib:DraggingEnabled(frame, parent)
     end)
 end
 
-function Lib:CreateWindow(Name, Theme, Keybind)
+function Lib:CreateWindow(Name, Theme)
     Name = Name or "Un Named"
-    Keybind = Keybind or Insert
     if Theme == "DarkMode" then
         Theme = Themes.DarkMode
     elseif Theme == "LightMode" then
@@ -94,7 +93,7 @@ function Lib:CreateWindow(Name, Theme, Keybind)
     local toggled = true
 
     input.InputBegan:Connect(function(keycode)
-        if keycode.KeyCode == Enum.KeyCode[Keybind] then
+        if keycode.KeyCode == Enum.KeyCode.Insert then
             if toggled == true then
                 toggled = false
                 screenGui.Enabled = false
