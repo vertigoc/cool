@@ -118,7 +118,8 @@ function SnitchFind()
             end
         end
     end 
-end)
+end
+                        end)
 
 game.Players.PlayerAdded:Connect(function()
     SnitchFind()
