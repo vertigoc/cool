@@ -9,7 +9,6 @@ if game.PlaceId == 5924471692 then
            ["Enable Kill Logs"] = true, -- Say if you want to get told what's bypassed
         }
     
-        loadstring(game:HttpGet("https://irisapp.ca/TheGoodSucc/iAntiCheat.lua"))()
     local Lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/vertigoc/cool/main/Libs/VertigosLib.lua"))()
     local Pages = Lib:CreateWindow("BloxWank", "DarkMode")
     local Main = Pages:CreateTab("Main")
