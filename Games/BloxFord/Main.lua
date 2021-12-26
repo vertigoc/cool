@@ -101,6 +101,30 @@ if game.PlaceId == 5924471692 then
     
         CheckAdmin()
     end)
+
+Main:CreateButton("Snitch Check", "Activate", function()
+    local Rats = {"Populacho", "darkwheaten", "angelo1357", "legozgh", "Onzixy", "ItxWolfie", "MyLordZer0", "KazaTheGreat", "iSpectate_WasTaken", "TheSplxsh", "kingunthere2000", "nawfal_hali", "dominickYT2", "The2334pk", "Nxrutt", "ObamaSunShine", "KrubiCX", "angjunxian_gamingyo", "Jonathanisrocking", "OhMyGoshDaMan"}
+
+
+function SnitchFind()
+    for _, v in pairs(Rats) do
+        for _2, v2 in pairs(game.Players:GetPlayers()) do
+            if v2.Name == v then
+                game.StarterGui:SetCore("SendNotification", {
+                    Title = "Snitch Detected";
+                    Text = 'Name: '..v;
+                    Duration = "5";
+                }) 
+            end
+        end
+    end 
+end
+
+game.Players.PlayerAdded:Connect(function()
+    SnitchFind()
+end)
+SnitchFind()                    
+end)
     
     local gmt = getrawmetatable(game)
     setreadonly(gmt, false)
@@ -221,6 +245,8 @@ local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.S
 Event:FireServer(A_1, A_2)
                                 end
     end)
+       
+        
     
     while true do wait(2)
     if getgenv().PickUpCrops == true then
