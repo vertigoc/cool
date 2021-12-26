@@ -103,7 +103,7 @@ if game.PlaceId == 5924471692 then
     end)
 
 Main:CreateButton("Snitch Check", "Activate", function()
-    local Rats = {"Populacho", "darkwheaten", "angelo1357", "legozgh", "Onzixy", "ItxWolfie", "MyLordZer0", "KazaTheGreat", "iSpectate_WasTaken", "TheSplxsh", "kingunthere2000", "nawfal_hali", "dominickYT2", "The2334pk", "Nxrutt", "ObamaSunShine", "KrubiCX", "angjunxian_gamingyo", "Jonathanisrocking", "OhMyGoshDaMan"}
+local Rats = {"Populacho", "darkwheaten", "angelo1357", "legozgh", "Onzixy", "ItxWolfie", "MyLordZer0", "KazaTheGreat", "iSpectate_WasTaken", "TheSplxsh", "kingunthere2000", "nawfal_hali", "dominickYT2", "The2334pk", "Nxrutt", "ObamaSunShine", "KrubiCX", "angjunxian_gamingyo", "Jonathanisrocking", "OhMyGoshDaMan"}
 
 
 function SnitchFind()
@@ -112,12 +112,18 @@ function SnitchFind()
             if v2.Name == v then
                 game.StarterGui:SetCore("SendNotification", {
                     Title = "Snitch Detected";
-                    Text = 'Name: '..v;
+                    Text = 'Name: '..v..' / Display: '..game:GetService("Players")[v].DisplayName;
                     Duration = "5";
                 }) 
             end
         end
     end 
+end
+
+game.Players.PlayerAdded:Connect(function()
+    SnitchFind()
+end)
+SnitchFind()
 end
 
 game.Players.PlayerAdded:Connect(function()
