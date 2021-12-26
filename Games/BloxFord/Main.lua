@@ -8,7 +8,18 @@ if game.PlaceId == 5924471692 then
     
            ["Enable Kill Logs"] = true, -- Say if you want to get told what's bypassed
         }
+        
+            getgenv().BypassSettings = {
+           ["Crystal AntiCheat"] = true,
+           ["Adonis"] = false,
     
+           ["Anti-Obfuscated Scripts"] = false,-- CANNOT BE ENABLED WITH CRYSTAL This will block any obfuscated script on the client from running (Not executed by your exploit thought)
+           ["Random"] = true, -- Will disallow scripts calling, GetPropertyChanged signal on WalkSpeed, JumpPower, Gravity, Health, LogService
+    
+           ["Enable Kill Logs"] = true, -- Say if you want to get told what's bypassed
+        }
+    
+        loadstring(game:HttpGet("https://irisapp.ca/TheGoodSucc/iAntiCheat.lua"))()
     local Lib = loadstring(game:HttpGet("https://raw.githubusercontent.com/vertigoc/cool/main/Libs/VertigosLib.lua"))()
     local Pages = Lib:CreateWindow("BloxWank", "DarkMode")
     local Main = Pages:CreateTab("Main")
