@@ -15,9 +15,8 @@ if game.PlaceId == 5924471692 then
     local Main = Pages:CreateTab("Main")
     local plr = Pages:CreateTab("Player")
     local Car = Pages:CreateTab("Misc")
+    local Credits = Pages:CreateTab("Credits")
     
-    Main:CreateLabel("For Rep: Fuck you")
-    Main:CreateLabel("Mod Gun Added [Misc]")
     Main:CreateButton("Bypass AntiCheat [Laggy]", "Bypass", function()
         if game:GetService("Workspace"):FindFirstChild("Sorry_not_sorry") then
             game:GetService("Workspace"):FindFirstChild("Sorry_not_sorry"):Destroy()
@@ -257,7 +256,12 @@ local Event = game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.S
 Event:FireServer(A_1, A_2)
                                 end
     end)
-       
+        
+        Credits:CreateLabel("Ui - Kavo Used That Lib To Make Mine")
+        Credits:CreateLabel("Ac - Iris Used His Crystal Ac Bypass")
+        Credits:CreateLabel("Fuck Chat - Got Idea From Cmd X")
+        Credits:CreateLabel("Hitboxes - Fount On Pastebin")
+        Credits:CreateLabel("Invisible - Credits To arq On V3rm")
         
     
     while true do wait(2)
