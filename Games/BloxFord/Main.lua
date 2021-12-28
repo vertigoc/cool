@@ -262,7 +262,7 @@ print("rpm")
                     local oldpos = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2435.64575, 11.0812035, -3376.73657)
-wait(.2)
+wait(.5)
 game.Players.LocalPlayer.Character.LowerTorso:destroy()
 local High = Instance.new("SelectionBox")
 High.Parent = game.Players.LocalPlayer.Character.HumanoidRootPart
