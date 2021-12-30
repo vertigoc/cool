@@ -249,7 +249,7 @@ local closureConstants = {
 }
 
 local closure = aux.searchClosure(scriptPath, closureName, upvalueIndex, closureConstants)
-local value = 0.1
+local value = 0.05
 local elementIndex = "rpm"
 
 
