@@ -96,6 +96,10 @@ function Noti:CreateWindow(Title)
     Instances.ImageButton_1.AutoButtonColor = false
     Instances.ImageButton_1.Name = 'Ok'
 
+    Instances.ImageButton_1.MouseButton1Down:Connect(function()
+        screenGui:Destroy()
+    end)
+
     Instances.TextLabel_1.Parent = Instances.ImageButton_1
     Instances.TextLabel_1.Font = Enum.Font.FredokaOne
     Instances.TextLabel_1.Text = 'Ok!'
