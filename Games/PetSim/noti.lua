@@ -2,7 +2,7 @@ local Noti = {}
 
 function Noti:CreateWindow(Title)
     Title = Title or "Updates!"
-local screenGui = Instance.new("ScreenGui",game:GetService("StarterGui"))
+local screenGui = Instance.new("ScreenGui",game:GetService("CoreGui"))
 
 local Instances = {
 	["ScrollingFrame_1"] = Instance.new("ScrollingFrame"),
