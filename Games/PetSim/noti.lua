@@ -22,6 +22,13 @@ local Instances = {
 	["UICorner_3"] = Instance.new("UICorner"),
 }
 
+local function UpdateSize()
+    local cS = Instances.UIListLayout_1.AbsoluteContentSize
+
+    game.TweenService:Create(Instances.ScrollingFrame_1, TweenInfo.new(0.15, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
+        CanvasSize = UDim2.new(0,cS.X,0,cS.Y)
+    }):Play()
+end
 
 screenGui.DisplayOrder = 100
 screenGui.Name = 'Updates'
@@ -150,6 +157,8 @@ Instances.UIStroke_2.Color = Color3.new(0.109804, 0.270588, 0.321569)
 Instances.UIStroke_2.LineJoinMode = Enum.LineJoinMode.Bevel
 Instances.UIStroke_2.Thickness = 4.9674634933472
 
+UpdateSize()
+
     local Labels = {}
 
     function Labels:Text(Text)
@@ -166,6 +175,7 @@ Instances.UIStroke_2.Thickness = 4.9674634933472
         LabelInstnaces.TextLabel_1.BorderSizePixel = 0
         LabelInstnaces.TextLabel_1.Position = UDim2.new(0, 0, 5.7798445141088e-08, 0)
         LabelInstnaces.TextLabel_1.Size = UDim2.new(0, 400, 0, 50)
+        UpdateSize()
     end
     return Labels;
 end
