@@ -49,7 +49,7 @@ Instances.UIStroke_1.Thickness = 6.322226524353
 
 Instances.ScrollingFrame_1.Parent = Instances.Frame_1
 Instances.ScrollingFrame_1.ScrollBarImageColor3 = Color3.new(0, 0, 0)
-Instances.ScrollingFrame_1.ScrollBarThickness = 6
+Instances.ScrollingFrame_1.ScrollBarThickness = 0
 Instances.ScrollingFrame_1.Active = true
 Instances.ScrollingFrame_1.BackgroundColor3 = Color3.new(1, 1, 1)
 Instances.ScrollingFrame_1.BackgroundTransparency = 1
