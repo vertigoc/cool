@@ -82,17 +82,19 @@ if game.PlaceId == 5924471692 then
     Main:CreateButton("Admin Check", "Activate", function()
         Admins = {2613485315,306654785, 25074343, 4549187, 1335586467, 60625091, 74203010, 87783947, 205021168, 514766723, 1654610911, 1523203904, 1576824898, 1576824898, 2644516865, 183793140, 290515888, 1607698411, 184456421, 1578667424, 243383919, 129513460, 660028340, 214470, 66869488, 72584476, 66791249, 355123078, 743239452, 73492985, 1846501946, 270645552, 189838373, 20129297, 152957945, 436332770, 172017979, 311255332, 90430360, 889840086}
     
-        function CheckAdmin()
-        for i, v in pairs(Admins) do
-        for _,v2 in pairs(game.Players:GetPlayers()) do
-        if v2.UserId == v then
-        game:GetService'Players'.LocalPlayer:Kick("Admin Fount: "..v)
-        else
-        print("No Admins")
-        end
-        end
-        end
-        end
+	function CheckAdmin()
+	    for i, v in pairs(Admins) do
+		for _,v2 in pairs(game.Players:GetPlayers()) do
+		    if v2.UserId == v then
+			local User = game:GetService("Players"):GetNameFromUserIdAsync(v)
+			local Display = game:GetService("Players")[User].DisplayName
+			game:GetService'Players'.LocalPlayer:Kick("Admin Fount / Id: "..v.." / Username: "..User.." / Display: "..Display)
+		    else
+			print("No Admins")
+		    end
+		end
+	    end
+	end
     
         game.Players.PlayerAdded:Connect(function()
         CheckAdmin()
