@@ -73,6 +73,9 @@ function Lib:CreateWindow(Name, Theme)
     end
 
     local screenGui = Instance.new("ScreenGui",game:GetService("CoreGui"))
+    	if (syn and syn.protect_gui) or protect_gui then
+		(syn.protect_gui or protect_gui)(screenGui)
+	end
 
     local Instances = {
         ["UIListLayout_1"] = Instance.new("UIListLayout"),
